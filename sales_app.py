@@ -50,7 +50,7 @@ timestamp_placeholder = st.sidebar.empty()
 
 # Manual refresh button
 if st.sidebar.button("Refresh Now"):
-    st.experimental_rerun()
+    st.rerun()
 
 # Custom CSS with modern design and refresh indicator
 st.markdown("""
@@ -561,7 +561,7 @@ def main():
         # Perform refresh if auto-refresh is enabled and interval has elapsed
         if st.session_state.auto_refresh and time_elapsed >= st.session_state.refresh_interval:
             st.session_state.last_refresh = current_time
-            st.experimental_rerun()
+            st.rerun()
     
     # Update refresh status indicator
     update_refresh_status(st.session_state.auto_refresh)
@@ -732,4 +732,4 @@ if __name__ == "__main__":
         time.sleep(1)  # Small delay to prevent excessive CPU usage
         time_elapsed = (datetime.now() - st.session_state.last_refresh).total_seconds()
         if time_elapsed >= st.session_state.refresh_interval:
-            st.experimental_rerun()
+            st.rerun()
