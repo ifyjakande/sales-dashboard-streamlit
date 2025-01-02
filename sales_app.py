@@ -55,156 +55,212 @@ if st.sidebar.button("Refresh Now"):
 # Custom CSS with modern design and refresh indicator
 st.markdown("""
 <style>
-    /* Main Layout */
+/* Main Layout */
+.main {
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+@media (prefers-color-scheme: dark) {
     .main {
-        padding: 2rem;
-        background-color: #f8f9fa;
+        background-color: #1a1a1a;
     }
-    
-    /* Title Styling */
+}
+
+/* Title Styling */
+.title {
+    text-align: center;
+    font-size: 2.8em;
+    background: linear-gradient(45deg, #1a5f7a, #48cae4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 20px 0;
+}
+
+@media (prefers-color-scheme: dark) {
     .title {
-        text-align: center;
-        font-size: 2.8em;
-        background: linear-gradient(45deg, #2E3192, #1BFFFF);
+        background: linear-gradient(45deg, #90e0ef, #caf0f8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 30px;
-        font-weight: 800;
-        font-family: 'Helvetica Neue', sans-serif;
-        padding: 20px 0;
     }
-    
-    /* Subtitle Styling */
+}
+
+/* Subtitle Styling */
+.subtitle {
+    text-align: center;
+    font-size: 1.6em;
+    color: #2c7da0;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
     .subtitle {
-        text-align: center;
-        font-size: 1.6em;
-        color: #4a4a4a;
-        margin-bottom: 30px;
-        font-weight: 300;
+        color: #a8dadc;
     }
-    
-    /* Section Headers */
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 1.8em;
+    color: #1a5f7a;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
     .section-header {
-        font-size: 1.8em;
-        color: #2E3192;
-        margin: 30px 0 20px 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #e0e0e0;
-        font-weight: 600;
+        color: #90e0ef;
+        border-bottom-color: #333;
     }
-    
-    /* Card Styling */
+}
+
+/* Card Styling */
+.stcard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
     .stcard {
-        background-color: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+        background-color: #2d2d2d;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
-    
-    /* Sidebar Styling */
+}
+
+/* Sidebar Styling */
+.css-1d391kg {
+    background-color: #f1f3f4;
+}
+
+@media (prefers-color-scheme: dark) {
     .css-1d391kg {
-        background-color: #f1f3f4;
-        padding: 20px;
+        background-color: #1a1a1a;
     }
-    
-    .sidebar .sidebar-content {
-        background-color: #f1f3f4;
-    }
-    
-    /* Chart Container */
+}
+
+/* Chart Container */
+.chart-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
     .chart-container {
-        background-color: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #2d2d2d;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
-    
-    /* Dataframe Styling */
-    .dataframe {
-        font-family: 'Helvetica Neue', sans-serif;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Streamlit Elements Override */
-    .stSelectbox {
-        background-color: white;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-    
-    .stNumberInput {
-        background-color: white;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-    
-    /* Plotly Chart Styling */
-    .js-plotly-plot {
-        border-radius: 15px;
-        overflow: hidden;
-    }
-    
-    /* Recommendations Section */
-    .recommendations {
-        background-color: white;
-        padding: 20px;
-        border-radius: 15px;
-        margin: 20px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Scrollbar Styling */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    
-    /* Refresh Status Indicator */
-    .refresh-status {
-        padding: 10px;
-        border-radius: 8px;
-        margin: 10px 0;
-        text-align: center;
-        font-size: 0.9em;
-    }
-    
+}
+
+/* Refresh Status Indicator */
+.refresh-status {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.refresh-active {
+    background-color: #e3f2fd;
+    color: #1a5f7a;
+    border: 1px solid #bbdefb;
+}
+
+.refresh-inactive {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+@media (prefers-color-scheme: dark) {
     .refresh-active {
-        background-color: #e3f2fd;
-        color: #1976d2;
-        border: 1px solid #bbdefb;
+        background-color: #1a5f7a;
+        color: #caf0f8;
+        border-color: #48cae4;
     }
     
     .refresh-inactive {
-        background-color: #ffebee;
-        color: #c62828;
-        border: 1px solid #ffcdd2;
+        background-color: #2d2d2d;
+        color: #ff8a80;
+        border-color: #c62828;
+    }
+}
+
+/* Timestamp */
+.timestamp {
+    font-size: 0.8em;
+    color: #2c7da0;
+    text-align: center;
+    margin-top: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .timestamp {
+        color: #90e0ef;
+    }
+}
+
+/* Recommendations Section */
+.recommendations {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .recommendations {
+        background-color: #2d2d2d;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c7da0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1a5f7a;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a;
     }
     
-    /* Last Updated Timestamp */
-    .timestamp {
-        font-size: 0.8em;
-        color: #666;
-        text-align: center;
-        margin-top: 5px;
+    ::-webkit-scrollbar-thumb {
+        background: #48cae4;
     }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #90e0ef;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
