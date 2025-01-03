@@ -13,7 +13,6 @@ A comprehensive data pipeline and analytics solution for processing retail sales
 - [Installation & Configuration](#installation--configuration)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Architecture Overview 🏗️
 
@@ -123,7 +122,7 @@ Access the live dashboard: [Retail Sales Dashboard](https://retail-sales-dashboa
 
 ### 1. Repository Setup
 ```bash
-git clone https://github.com/yourusername/sales-dashboard-streamlit.git
+git clone https://github.com/ifyjakande/sales-dashboard-streamlit.git
 cd sales-dashboard-streamlit
 ```
 
@@ -148,7 +147,7 @@ Required packages:
 docker-compose up -d
 ```
 
-### 5. Streamlit Configuration
+### 4. Streamlit Configuration
 Configure your secrets in the Streamlit Cloud dashboard:
 1. Go to your app's dashboard on Streamlit Cloud
 2. Navigate to the "Secrets" section
@@ -160,16 +159,6 @@ username = "your-username"
 password = "your-password"
 ```
 These secrets will be securely stored and accessible to your application.
-
-### 6. Database Connection
-Ensure ODBC Driver 17 for SQL Server is installed:
-```bash
-# Ubuntu/Debian
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
-apt-get update
-ACCEPT_EULA=Y apt-get install -y msodbcsql17
-```
 
 ## Usage 💡
 
