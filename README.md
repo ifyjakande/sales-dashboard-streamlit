@@ -3,7 +3,7 @@
 A comprehensive data pipeline and analytics solution for processing retail sales data using Apache Airflow, Azure Synapse Analytics, Apache Kafka, and Streamlit.
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://retail-sales-dashboard.streamlit.app/)
-📹 [Watch the Project Demo Video](https://www.youtube.com/watch?v=HIoFMV7k9Jk&t=2s)
+> **Note**: The live dashboard has been taken offline to optimize cloud costs. To see the project in action, please watch the comprehensive [demo video](https://www.youtube.com/watch?v=HIoFMV7k9Jk&t=2s).
 
 ## Table of Contents 📑
 - [Architecture Overview](#architecture-overview)
